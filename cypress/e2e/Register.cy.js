@@ -6,6 +6,8 @@ describe('Register Page',()=>{
  
      it('RegisterTest',()=>{
         regisObj.OpenURL()
+        regisObj.clickMyaccount()
+        regisObj.clickRegister()
         regisObj.enterFirstName(Register.Fname)
         regisObj.enterLastName(Register.Lname)
         regisObj.enteremailId(Register.email)
@@ -14,7 +16,7 @@ describe('Register Page',()=>{
         regisObj.enterconfirmPassword(Register.password)
         regisObj.enterpolicyCheck()
         regisObj.clickcontinueButton()
-        regisObj.Verifylogin()
+        regisObj.Verifylogin().should('have.text','Your Account Has Been Created!')
 
      })
 

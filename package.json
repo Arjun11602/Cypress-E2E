@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:addtocart": "npx cypress run --browser chrome --spec cypress/e2e/Testcases/AddCard.cy.js --headed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/Arjun11602/Cypress-E2E#readme",
   "dependencies": {
     "cypress": "^13.9.0"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }

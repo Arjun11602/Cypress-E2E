@@ -1,7 +1,8 @@
 export class RegisterPage{
 
         WebLocators= {
-
+            Myaccount:'[title="My Account"]',
+            RegisterButton:'[class="dropdown-menu dropdown-menu-right"]>li:first-child',
             firstName:'#input-firstname',
             lastName:'#input-lastname',
             emailId:'#input-email',
@@ -17,6 +18,16 @@ export class RegisterPage{
         OpenURL(){
 
             cy.visit(Cypress.env('URL'))
+        }
+
+        clickMyaccount(){
+            cy.get(this.WebLocators.Myaccount).click()
+
+        }
+
+        clickRegister(){
+            cy.get(this.WebLocators.RegisterButton).click()
+
         }
 
         enterFirstName(firstname){
@@ -60,7 +71,7 @@ export class RegisterPage{
 
         }
         Verifylogin(){
-            cy.get(this.WebLocators.HomePagemsg).should('have.text','Your Account Has Been Created!')
+            return cy.get(this.WebLocators.HomePagemsg)
 
         }
 
